@@ -1,5 +1,5 @@
 # =============================================================================
-# PROJE: AD ANALIZ PANELI - OZEL YAN MENU TASARIMI
+# PROJE: AD ANALIZ PANELI
 # YAZAR: SAFAK CAN BAV
 # =============================================================================
 $OutputEncoding = [System.Text.Encoding]::UTF8
@@ -96,7 +96,7 @@ $html = @'
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>AD Analiz Paneli v2</title>
+    <title>AD Analiz Paneli</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
@@ -143,7 +143,7 @@ $html = @'
         <div class="nav-link active" onclick="goto('t1', this)"><i class="fa-solid fa-house"></i> Ozet Paneli</div>
         <div class="nav-link" onclick="goto('t2', this)"><i class="fa-solid fa-user-group"></i> Kullanicilar</div>
         <div class="nav-link" onclick="goto('t3', this)"><i class="fa-solid fa-laptop"></i> Cihazlar</div>
-        <div class="mt-auto p-4"><small style="color:#475569; font-size:10px;">v2.0 OZEL TASARIM</small></div>
+        <div class="mt-auto p-4"><small style="color:#475569; font-size:10px;">v2.0</small></div>
     </div>
 
     <main class="main-content">
@@ -242,4 +242,4 @@ $dtS = Get-Date -Format "dd.MM.yyyy"
 $fP = [IO.Path]::Combine([Environment]::GetFolderPath('Desktop'), "AD-Analiz-Raporu_$dtS.html")
 $finalH = $html.Replace('@U@',$uEnc).Replace('@C@',$cEnc).Replace('@S@',$sEnc)
 [IO.File]::WriteAllText($fP, $finalH, [System.Text.Encoding]::UTF8)
-Write-Host "`n--- Rapor Olusturuldu. Tamamen Turkce ve Yeni Tasarim! ---" -ForegroundColor Green
+Write-Host "`n--- Rapor Olusturuldu: $fP ---" -ForegroundColor Green
