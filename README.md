@@ -1,4 +1,11 @@
-# Active Directory Analiz Paneli v2.0 - Premium Edition
+# Active Directory Analiz Paneli
+
+<p align="center">
+  <kbd><img src="img1.png" width="48%" alt="Kullanıcı Paneli" /></kbd>
+  <kbd><img src="img2.png" width="48%" alt="Cihaz Paneli" /></kbd>
+  <br>
+  <sub><b>Görsel 1:</b> Kullanıcı Detay Paneli &nbsp; | &nbsp; <b>Görsel 2:</b> Cihaz Envanter Paneli</sub>
+</p>
 
 Active Directory ortamınızdaki kullanıcı ve cihaz verilerini profesyonel, modern ve interaktif bir web raporuna dönüştüren güçlü bir PowerShell aracıdır.
 
@@ -21,5 +28,4 @@ Active Directory ortamınızdaki kullanıcı ve cihaz verilerini profesyonel, mo
 - Bilgisayar envanteri ve işletim sistemi detayları.
 - Kullanıcı detayları (Grup üyelikleri, yönetici bilgisi vb.) için interaktif modal pencereler.
 
----
 *Hazırlayan: Safak Can Bav*
