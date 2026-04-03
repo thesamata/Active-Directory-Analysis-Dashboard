@@ -1,11 +1,11 @@
 # =============================================================================
-# PROJE: AD ANALIZ PANELI v5.3 (FORTRESS)
+# PROJE: AD ANALIZ PANELI
 # YAZAR: SAFAK CAN BAV
 # =============================================================================
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
-Write-Host '[+] AD Evrensel Analiz Paneli Baslatildi (v5.3 FORTRESS)...' -ForegroundColor Yellow
+Write-Host '[+] AD Evrensel Analiz Paneli Baslatildi...' -ForegroundColor Yellow
 
 try {
     $root = [ADSI]"LDAP://RootDSE"

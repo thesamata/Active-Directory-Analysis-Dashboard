@@ -1,4 +1,4 @@
-# 🏰 AD ANALİZ PANELİ (v5.3 FORTRESS)
+# 🏰 AD ANALİZ PANELİ
 
 Active Directory yapınızı saniyeler içinde analiz eden ve görsel bir rapor sunan profesyonel bir denetim asistanıdır.
 
