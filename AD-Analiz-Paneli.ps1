@@ -1,11 +1,11 @@
 # =============================================================================
-# PROJE: AD ANALIZ DASHBOARD v5.3 (FORTRESS)
+# PROJE: AD ANALIZ PANELI v5.3 (FORTRESS)
 # YAZAR: SAFAK CAN BAV
 # =============================================================================
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
-Write-Host '[+] AD Evrensel Analiz Baslatildi (v5.3 FORTRESS)...' -ForegroundColor Yellow
+Write-Host '[+] AD Evrensel Analiz Paneli Baslatildi (v5.3 FORTRESS)...' -ForegroundColor Yellow
 
 try {
     $root = [ADSI]"LDAP://RootDSE"
@@ -85,7 +85,7 @@ $html = @'
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <title>AD AUDIT MASTER</title>
+    <title>AD ANAL&#304;Z PANEL&#304;</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
@@ -104,24 +104,24 @@ $html = @'
     <div class="sidebar d-flex flex-column">
         <h5 class="fw-bold mb-5 text-primary">AD ANAL&#304;Z</h5>
         <div class="nav flex-column nav-pills">
-            <div class="nav-link active" onclick="tab('t1', this)">Dashboard</div>
+            <div class="nav-link active" onclick="tab('t1', this)">&#214;zet Paneli</div>
             <div class="nav-link" onclick="tab('t2', this)">Kullan&#305;c&#305;lar</div>
             <div class="nav-link" onclick="tab('t3', this)">Bilgisayarlar</div>
         </div>
     </div>
     <div class="main">
-        <h2 class="fw-bold mb-4">AD AUDIT DASHBOARD</h2>
+        <h2 class="fw-bold mb-4">AD ANAL&#304;Z PANEL&#304;</h2>
         <div id="t1" class="tab-pane active shadow-none">
             <div class="row g-3 text-center">
-                <div class="col-md-3"><div class="card-p">USERS<div class="stat-val" id="v1">0</div></div></div>
-                <div class="col-md-3"><div class="card-p text-success">ACTIVE<div class="stat-val" id="v2">0</div></div></div>
-                <div class="col-md-3"><div class="card-p text-danger">STALE<div class="stat-val" id="v3">0</div></div></div>
-                <div class="col-md-3"><div class="card-p text-primary">ADMINS<div class="stat-val" id="v4">0</div></div></div>
+                <div class="col-md-3"><div class="card-p">KULLANICILAR<div class="stat-val" id="v1">0</div></div></div>
+                <div class="col-md-3"><div class="card-p text-success">AKT&#304;F<div class="stat-val" id="v2">0</div></div></div>
+                <div class="col-md-3"><div class="card-p text-danger">ATIL<div class="stat-val" id="v3">0</div></div></div>
+                <div class="col-md-3"><div class="card-p text-primary">ADM&#304;NLER<div class="stat-val" id="v4">0</div></div></div>
             </div>
             <div class="card-p mt-4"><canvas id="c1" height="150"></canvas></div>
         </div>
-        <div id="t2" class="tab-pane d-none"><div class="card-p"><table class="table w-100" id="ut"><thead><tr><th>&#304;sim</th><th>Kullan&#305;c&#305;</th><th>&#220;nvan</th><th>Kategori</th><th>Status</th><th>Giri&#351;</th></tr></thead><tbody id="ub"></tbody></table></div></div>
-        <div id="t3" class="tab-pane d-none"><div class="card-p"><table class="table w-100" id="ct"><thead><tr><th>PC</th><th>OS</th><th>Kategori</th><th>Status</th><th>Giri&#351;</th></tr></thead><tbody id="cb"></tbody></table></div></div>
+        <div id="t2" class="tab-pane d-none"><div class="card-p"><table class="table w-100" id="ut"><thead><tr><th>&#304;sim</th><th>Kullan&#305;c&#305;</th><th>&#220;nvan</th><th>Kategori</th><th>Durum</th><th>Giri&#351;</th></tr></thead><tbody id="ub"></tbody></table></div></div>
+        <div id="t3" class="tab-pane d-none"><div class="card-p"><table class="table w-100" id="ct"><thead><tr><th>PC</th><th>OS</th><th>Kategori</th><th>Durum</th><th>Giri&#351;</th></tr></thead><tbody id="cb"></tbody></table></div></div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
@@ -145,6 +145,8 @@ $html = @'
 </html>
 '@
 
+$dtStr = Get-Date -Format "dd.MM.yyyy"
+$fName = "AD-Analiz-Raporu_$dtStr.html"
 $f = $html.Replace('@U@',$uEnc).Replace('@C@',$cEnc).Replace('@S@',$sEnc)
-[IO.File]::WriteAllText([IO.Path]::Combine([Environment]::GetFolderPath('Desktop'), 'AD_FORTRESS_REPORT.html'), $f, [Text.Encoding]::UTF8)
-Write-Host '--- FİNAL: AD_FORTRESS_REPORT.html ---' -ForegroundColor Green
+[IO.File]::WriteAllText([IO.Path]::Combine([Environment]::GetFolderPath('Desktop'), $fName), $f, [Text.Encoding]::UTF8)
+Write-Host "--- FINAL: $fName Masaustune Olusturuldu ---" -ForegroundColor Green
