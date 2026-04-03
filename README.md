@@ -33,11 +33,15 @@ Bu aracı çalıştırmak için herhangi bir ek yazılım kurmanıza gerek yoktu
     ```
 5.  **Sonucu Görüntüleyin:** Analiz tamamlandığında Masaüstünüzde otomatik olarak **`AD-Analiz-Raporu_GG.AA.YYYY.html`** formatında (örneğin: `AD-Analiz-Raporu_03.04.2026.html`) bir dosya oluşacaktır. Bu dosyayı herhangi bir internet tarayıcısı (Chrome, Edge vb.) ile açabilirsiniz.
 
-## 📷 Ekran Görüntüsü
-*(Burası raporun ne kadar şık göründüğünü anlatmak içindir)*
-- **Dark/Light Mode Desteği**
-- **Bootstrap 5 & Chart.js Altyapısı**
-- **Arama ve Filtreleme Özellikli Tablolar**
+## 📷 Ekran Görüntüleri
+
+### 👥 Kullanıcı Analizi
+Arama ve filtreleme özellikleri sayesinde binlerce kullanıcı arasından istediğiniz veriye anında ulaşın.
+![Kullanıcı Paneli](img1.png)
+
+### 💻 Bilgisayar Envanteri
+İşletim sistemi dağılımı ve aktiflik durumlarını tek bir tabloda görün.
+![Bilgisayar Paneli](img2.png)
 
 ---
-*Bu araç sistem yöneticilerinin günlük kontrollerini hızlandırmak ve AD sağlığını görselleştirmek için tasarlanmıştır.*
+*Bu araç, sistem yöneticilerinin günlük kontrollerini hızlandırmak ve Active Directory sağlığını görselleştirmek için geliştirilmiştir.*
